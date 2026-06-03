@@ -2,8 +2,8 @@ package plantas;
 public class Planta {
     //Datos ingresados
     protected String nombre;
-    protected float Tiempo_sin_agua;
-    protected float crecimiento_semanal;
+    protected double Tiempo_sin_agua;
+    protected double crecimiento_semanal;
     protected int Agua_necesaria;
 
     Planta(String nombre, float Tiempo_sin_agua, int Agua_necesaria, float crecimiento_semanal){
@@ -19,7 +19,7 @@ public class Planta {
         this.nombre = nombre;
     }
 
-    public float getTiempo_sin_agua() {
+    public double getTiempo_sin_agua() {
         return Tiempo_sin_agua;
     }
     public void setTiempo_sin_agua(float Tiempo_sin_agua) {
@@ -33,7 +33,7 @@ public class Planta {
         this.Agua_necesaria = Agua_necesaria;
     }
 
-    public float getCrecimiento_semanal() {
+    public double getCrecimiento_semanal() {
         return crecimiento_semanal;
     }
     public void setCrecimiento_semanal(float crecimiento_semanal) {
