@@ -49,4 +49,8 @@ public class Planta {
     public double calcLitrosAguaNecesitados(double areaSolicitada, double litrosAprox){
         return areaSolicitada*litrosAprox;
     }
+
+    public String darInfoFinal(){
+        return "El agua nesesaria es"+litrosAguaNecesitados+"L en "+ areaSolicitada+"m^2";
+    }
 }
