@@ -1,4 +1,4 @@
-package herencia.planta;
+package src.plantas;
 public class Higrofitas extends Planta {
     private boolean Hojas_grandes;
     Higrofitas(String nombre, float Tiempo_sin_agua, int Agua_necesaria, float crecimiento_semanal, boolean Hojas_grandes){
