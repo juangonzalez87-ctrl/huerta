@@ -6,7 +6,9 @@ public class Xerofitas extends Planta{
     
     public Xerofitas(String nombre, double tiempoSinAgua, double crecimiento_semanal, double areaSolicitada,
             boolean tallo_grueso, boolean espinas) {
+
         super(nombre, tiempoSinAgua, crecimiento_semanal, areaSolicitada);
+        super.calcLitrosAguaNecesitados(areaSolicitada, 1);
         this.tallo_grueso = tallo_grueso;
         this.espinas = espinas;
     }
@@ -25,9 +27,9 @@ public class Xerofitas extends Planta{
         this.espinas = espinas;
     }
     
-    @Override
-    public String darInfoFinal(){
-        super.calcLitrosAguaNecesitados(areaSolicitada, 1);
-        return (super.darInfoFinal() + " Tallo grueso: "+tallo_grueso+ " Espinas: "+espinas);
+    public void darInfoFinal(){
+        System.out.println((super.infoBasica()+ 
+        "\nTallo grueso: "+cumple(tallo_grueso)+ 
+        "\nEspinas: "+cumple(espinas)));
     }
 }
