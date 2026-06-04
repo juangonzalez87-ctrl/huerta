@@ -1,4 +1,5 @@
 package plantas;
+
 public class Higrofitas extends Planta{
     private boolean Hojas_grandes;
 
