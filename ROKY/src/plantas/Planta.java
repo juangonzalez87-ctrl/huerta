@@ -1,15 +1,15 @@
-package plantas;
-public class Planta {
-    //Datos ingresados
+//Datos ingresados
     protected String nombre;
-    protected double Tiempo_sin_agua;
+    protected double tiempoSinAgua;
     protected double crecimiento_semanal;
-    protected int Agua_necesaria;
-
-    Planta(String nombre, float Tiempo_sin_agua, int Agua_necesaria, float crecimiento_semanal){
-        this.nombre=nombre;
-        this.Tiempo_sin_agua=Tiempo_sin_agua;
-        this.Agua_necesaria=Agua_necesaria;
+    protected double areaSolicitada;
+    protected double litrosAguaNecesitados;
+    
+    public Planta(String nombre, double tiempoSinAgua, double crecimiento_semanal, double areaSolicitada) {
+        this.nombre = nombre;
+        this.tiempoSinAgua = tiempoSinAgua;
+        this.crecimiento_semanal = crecimiento_semanal;
+        this.areaSolicitada = areaSolicitada;
     }
 
     public String getNombre() {
@@ -19,28 +19,31 @@ public class Planta {
         this.nombre = nombre;
     }
 
-    public double getTiempo_sin_agua() {
-        return Tiempo_sin_agua;
+    public double getTiempoSinAgua() {
+        return tiempoSinAgua;
     }
-    public void setTiempo_sin_agua(float Tiempo_sin_agua) {
-        this.Tiempo_sin_agua = Tiempo_sin_agua;
-    }
-
-    public int getAgua_necesaria() {
-        return Agua_necesaria;
-    }
-    public void setAgua_necesaria(int Agua_necesaria) {
-        this.Agua_necesaria = Agua_necesaria;
+    public void setTiempoSinAgua(double tiempoSinAgua) {
+        this.tiempoSinAgua = tiempoSinAgua;
     }
 
     public double getCrecimiento_semanal() {
         return crecimiento_semanal;
     }
-    public void setCrecimiento_semanal(float crecimiento_semanal) {
+    public void setCrecimiento_semanal(double crecimiento_semanal) {
         this.crecimiento_semanal = crecimiento_semanal;
     }
-    
-    public String darInfoFinal(){
-        return (" nombre: "+nombre+ " regar cada: "+Tiempo_sin_agua+"h " + " Litros de agua: "+Agua_necesaria+"L" );
+
+    public double getAreaSolicitada() {
+        return areaSolicitada;
     }
-}
+    public void setAreaSolicitada(double areaSolicitada) {
+        this.areaSolicitada = areaSolicitada;
+    }
+
+    public double getLitrosAguaNecesitados() {
+        return litrosAguaNecesitados;
+    }
+
+    public double calcLitrosAguaNecesitados(double areaSolicitada, double litrosAprox){
+        return areaSolicitada*litrosAprox;
+    }
