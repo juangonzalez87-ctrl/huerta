@@ -1,5 +1,5 @@
 package plantas;
-public class Planta {
+public abstract class Planta {
     //Datos ingresados
     protected String nombre;
     protected double tiempoSinAgua;
@@ -40,17 +40,33 @@ public class Planta {
     }
     public void setAreaSolicitada(double areaSolicitada) {
         this.areaSolicitada = areaSolicitada;
+        calcLitrosAguaNecesitados(areaSolicitada, areaSolicitada);
     }
 
-    public double getLitrosAguaNecesitados() {
+    public double getLitrosAguaNecesitados(){
         return litrosAguaNecesitados;
     }
 
-    public double calcLitrosAguaNecesitados(double areaSolicitada, double litrosAprox){
-        return areaSolicitada*litrosAprox;
+    public void calcLitrosAguaNecesitados(double areaSolicitada, double litrosAprox) {
+        litrosAguaNecesitados = this.areaSolicitada*litrosAprox;
     }
 
-    public String darInfoFinal(){
-        return "El agua nesesaria es"+litrosAguaNecesitados+"L en "+ areaSolicitada+"m^2";
+    public String cumple(boolean c) {
+        return c ? "si":"no";
     }
+
+    public double crecimientoEstimado(int semanas) {
+        return crecimiento_semanal * semanas;
+    }
+    
+    public boolean necesitaRiego(double diasDesdeUltimoRiego) {
+        return diasDesdeUltimoRiego >= tiempoSinAgua;
+    }
+    
+    public String infoBasica() {
+        return "El agua necesaria es " + litrosAguaNecesitados + "L en " + areaSolicitada +
+               "m^2,\n tolera " + tiempoSinAgua + " días sin agua \ncrece " +
+               crecimiento_semanal + " cm/semana";
+    }
+
 }
