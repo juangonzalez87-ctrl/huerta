@@ -6,6 +6,7 @@ public class Mesofitas extends Planta{
     public Mesofitas(String nombre, double tiempoSinAgua, double crecimiento_semanal, double areaSolicitada,
             boolean raices_largas) {
         super(nombre, tiempoSinAgua, crecimiento_semanal, areaSolicitada);
+        super.calcLitrosAguaNecesitados(areaSolicitada, 3);
         Raices_largas = raices_largas;
     }
 
@@ -16,9 +17,8 @@ public class Mesofitas extends Planta{
         Raices_largas = raices_largas;
     } 
     
-    @Override
-    public String darInfoFinal(){
-        super.calcLitrosAguaNecesitados(areaSolicitada, 3);
-        return (super.darInfoFinal() + " Raices largas: "+Raices_largas);   
+    public void darInfoFinal(){
+        System.out.print(super.infoBasica() + 
+        "\nRaices largas: "+cumple(Raices_largas));   
     }
 }
