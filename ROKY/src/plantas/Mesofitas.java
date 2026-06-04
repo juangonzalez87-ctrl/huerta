@@ -1,11 +1,14 @@
-package src.plantas;
+package plantas;
+
 public class Mesofitas extends Planta{
     private boolean Raices_largas;
-    Mesofitas(String nombre, float Tiempo_sin_agua, int Agua_necesaria, float crecimiento_semanal, boolean Raices_largas){
-        super(nombre, Tiempo_sin_agua, Agua_necesaria, crecimiento_semanal);
-        this.Raices_largas=Raices_largas;
 
+    public Mesofitas(String nombre, double tiempoSinAgua, double crecimiento_semanal, double areaSolicitada,
+            boolean raices_largas) {
+        super(nombre, tiempoSinAgua, crecimiento_semanal, areaSolicitada);
+        Raices_largas = raices_largas;
     }
+
     public boolean isRaices_largas() {
         return Raices_largas;
     }
@@ -13,8 +16,9 @@ public class Mesofitas extends Planta{
         Raices_largas = raices_largas;
     } 
     
-@Override
-public String darInfoFinal(){
-    return (super.darInfoFinal() + " Raices largas: "+Raices_largas);   
-}
+    @Override
+    public String darInfoFinal(){
+        super.calcLitrosAguaNecesitados(areaSolicitada, 3);
+        return (super.darInfoFinal() + " Raices largas: "+Raices_largas);   
+    }
 }
