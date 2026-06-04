@@ -6,6 +6,7 @@ public class Higrofitas extends Planta{
     public Higrofitas(String nombre, double tiempoSinAgua, double crecimiento_semanal, double areaSolicitada,
             boolean hojas_grandes) {
         super(nombre, tiempoSinAgua, crecimiento_semanal, areaSolicitada);
+        super.calcLitrosAguaNecesitados(areaSolicitada, 5);
         Hojas_grandes = hojas_grandes;
     }
 
@@ -16,9 +17,8 @@ public class Higrofitas extends Planta{
         Hojas_grandes = hojas_grandes;
     }
 
-    @Override
-    public String darInfoFinal(){
-        super.calcLitrosAguaNecesitados(areaSolicitada, 5);
-        return (super.darInfoFinal() + " Hojas grandes: "+Hojas_grandes);
+    public void darInfoFinal(){
+        System.out.print(super.infoBasica()+ 
+        "\nHojas grandes: "+cumple(Hojas_grandes));
     }
 }
