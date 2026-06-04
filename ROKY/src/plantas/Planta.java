@@ -1,4 +1,6 @@
-//Datos ingresados
+package plantas;
+public class Planta {
+    //Datos ingresados
     protected String nombre;
     protected double tiempoSinAgua;
     protected double crecimiento_semanal;
@@ -47,3 +49,4 @@
     public double calcLitrosAguaNecesitados(double areaSolicitada, double litrosAprox){
         return areaSolicitada*litrosAprox;
     }
+}
