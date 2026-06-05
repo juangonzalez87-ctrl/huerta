@@ -55,7 +55,6 @@ public class App {
 
         sc.close();
     }
-
     private static void mostrarMenu() {
         System.out.println("\n===== Gestion de huertos =====");
         System.out.println("1. Seleccionar huerto y planta");
@@ -70,6 +69,7 @@ public class App {
         System.out.print("Elige una opcion: ");
     }
 
+    //Ejemplos por defecto
     private static ArrayList<Huerto> crearHuertos() {
         ArrayList<Huerto> huertos = new ArrayList<>();
 
@@ -92,6 +92,7 @@ public class App {
         return huertos;
     }
 
+    //seleccion
     private static void registrarSeleccion(Scanner sc, ArrayList<Huerto> huertos, Gestion gestion,
             ArrayList<String> registroFinal) {
         Huerto huertoSeleccionado = seleccionarHuerto(sc, huertos, gestion);
@@ -144,6 +145,7 @@ public class App {
         return plantaSeleccionada;
     }
 
+    //añadir, crear o quitar
     private static void anadirHuerto(Scanner sc, ArrayList<Huerto> huertos, ArrayList<String> registroFinal) {
         System.out.print("Nombre del nuevo huerto: ");
         String nombre = sc.nextLine().trim();
@@ -294,6 +296,7 @@ public class App {
         return planta;
     }
     
+    //Registros y detalles
     private static void mostrarDetalleRiego(Scanner sc, ArrayList<Huerto> huertos, Gestion gestion,
             ArrayList<String> registroFinal) {
         Huerto huerto = seleccionarHuerto(sc, huertos, gestion);
