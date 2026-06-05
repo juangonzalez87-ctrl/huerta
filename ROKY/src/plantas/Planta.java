@@ -69,4 +69,5 @@ public abstract class Planta {
                crecimiento_semanal + " cm/semana";
     }
 
+    public abstract void darInfoFinal();
 }
