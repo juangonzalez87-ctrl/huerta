@@ -4,16 +4,25 @@ import plantas.Planta;
 public class Huerto {
     private ArrayList<Planta>plantas;
     
+    private String nombre;
     //Capacidad
     private double areaHuerto;
     private double litrosAgua;
 
     private double aguaAConsumir = 0;
 
-    public Huerto(double areaHuerto, double litrosAgua) {
+    public Huerto(String nombre, double areaHuerto, double litrosAgua) {
+        this.nombre = nombre;
         this.areaHuerto = areaHuerto;
         this.litrosAgua = litrosAgua;
         this.plantas = new ArrayList<>();
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public double getAreaHuerto() {
@@ -29,10 +38,14 @@ public class Huerto {
     public void setLitrosAgua(double litrosAgua) {
         this.litrosAgua = litrosAgua;
     }
+    
+    public ArrayList<Planta> getPlantas() {
+        return plantas;
+    }
 
     public void añadirPlanta(Planta p) {
         actualizarAguaAConsumir();
-
+        
         if (!(aguaAConsumir + p.getLitrosAguaNecesitados() >= litrosAgua)){
             plantas.add(p);
         }else{
@@ -51,7 +64,7 @@ public class Huerto {
     public void mostrarPlantas() {
         System.out.println("Plantas: ");
         for (Planta p : plantas) {
-            System.out.println("PLanta: "+p.getNombre());
+            System.out.println("+-> "+ p.getNombre() +" <-");
         }
     }
 
@@ -62,4 +75,5 @@ public class Huerto {
             }
         }
     }
+
 }
